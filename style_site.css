@@ -1,0 +1,178 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    color: steelblue;
+    font-size: 1.2rem;
+}
+
+.products_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    border: 3px solid orange;
+    border-radius: 30px;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product * {
+    padding-bottom: 10px;
+}
+
+.interface_ajout_panier {
+    display: flex;
+}
+
+.ajout_panier, .croix, .croix_panier {
+    width: 50px;
+}
+
+.voir_panier {
+    width: 100px;
+}
+
+.detail_product {
+    display: none;
+}
+
+.unhidden {
+    border: 3px solid orange;
+    background-color: white;
+    width: 60%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    border-radius: 30px;
+}
+
+.unhidden * {
+    padding-bottom: 20px;
+}
+
+.panier {
+    position: absolute;
+    display: none;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    transition: 0,7s;
+}
+
+.visible {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-color: lightgray;
+    align-items: center;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.croix_panier {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.voir_panier {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.marque_echelle_product {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quant_container {
+    width: 30%;
+    display: flex;
+    align-items: stretch;
+}
+
+.bouton_ajout_panier {
+    position: relative;
+    right: 0;
+    height: 60px;
+}
+
+.interface_ajout_panier {
+    width: 100%;
+    display: contents;
+}
+
+.image_panier {
+    width: 60%;
+}
+
+.produit_panier {
+    border: 3px solid white;
+    padding-top: 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;;
+}
+
+.croix {
+    right: 10px;
+    top: 10px;
+    position: absolute;
+}
+
+.montant_total {
+    position: absolute;
+    bottom: 50px;
+}
+
+.bouton_commande {
+    position: absolute;
+    bottom: 10px;
+}
+
+.indisponible {
+    color:brown;
+}
+
+.product_name:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.5em;
+    color: orange;
+}
+
+.filtre {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    width: 30%;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
