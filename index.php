@@ -63,7 +63,7 @@ function connexion($conn) {
 		$login = $_POST["login"];
 		$password = $_POST["passwd"];
 
-		if ($password == select_user_password($conn, $login)) {
+		if (login_password_ok($conn, $login, $password)) {
 			
 			$role = select_role($conn, $login);
 			

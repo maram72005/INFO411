@@ -11,7 +11,8 @@ function insert_utilisateur($conn, $login, $password, $role){
 }
 
 function update_utilisateur($conn, $id, $login, $password, $role){
-	$sql="UPDATE `comptes` SET `login`='$login',`password`='$password', `role`='$role'  WHERE id = $id" ; 
+	$password_encod = password_hash($password, PASSWORD_DEFAULT);
+	$sql="UPDATE `comptes` SET `login`='$login',`password`='$password_encod', `role`='$role'  WHERE id = $id" ; 
 	global $debeug ;
 	if($debeug) echo $sql ; 
 	$res=mysqli_query($conn, $sql) ; 

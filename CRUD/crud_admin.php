@@ -44,4 +44,19 @@ function select_role($conn, $login){
 
 /* print_r(select_role($conn, 1)); */
 
+
+function login_password_ok($conn, $login, $password) {
+    /* Permet de tester si le mot de passe et le nom d'utilisateur saisis sont concomitants */
+    $sql = "SELECT password FROM comptes WHERE login LIKE '$login'";
+    $req = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($req);
+    $data_password =  $row["password"];
+    if (password_verify($password, $data_password)) {
+        $res = "mot de passe correct";
+    } else {
+        $res = "mot de passe incorrect";
+    }
+    return $res;
+}
+
 ?>
