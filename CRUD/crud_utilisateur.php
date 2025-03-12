@@ -5,7 +5,8 @@
 $debeug=True ; 
 
 function insert_utilisateur($conn, $login, $password, $role){
-	$sql="INSERT INTO `comptes` (`login`, `password`, `role`) value( '$login', '$password', '$role' )" ; 
+	$password_encod = password_hash($password, PASSWORD_DEFAULT);
+	$sql="INSERT INTO `comptes` (`login`, `password`, `role`) value( '$login', '$password_encod', '$role' )" ; 
 	$res=mysqli_query($conn, $sql) ; 
 	return $res ; 
 }
