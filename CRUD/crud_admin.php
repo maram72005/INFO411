@@ -51,7 +51,7 @@ function login_password_ok($conn, $login, $password) {
     $req = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($req);
     $data_password =  $row["password"];
-	print_r($data_password);
+	print_r($row);
     if (password_verify($password, $data_password)) {
         $res = "mot de passe correct";
     } else {
