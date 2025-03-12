@@ -4,14 +4,9 @@
   <meta charset="utf-8">
   <link rel="icon" href="logo.png">
   <link rel="stylesheet" href="style_index.css">
-  <title>Connexion</title>
+  <title>Model-Shop Login</title>
 </head>
 <body>
-
-<div>
-<img class="logo" src="logo.png"/>
-</div>
-<br />	
 
 <h1> Model-shop </h1>
 
