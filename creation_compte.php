@@ -2,18 +2,12 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Connexion</title>
+  <title>Création compte</title>
   <link rel="stylesheet" href="style_index.css">
 </head>
 
 <body>
-<div>
-<img class="logo" src="logo.png"/>
-</div>
 
-<br />	
-
-<h1> GorillaPod </h1>
 <form method="POST" action="creation_compte.php">
 	
 <table class="insertion">
