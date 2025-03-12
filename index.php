@@ -57,41 +57,35 @@ if ((isset($_POST["login"])) && (isset($_POST["passwd"]))) {
 }
 
 function connexion($conn) {
-
-	if ((strlen(select_id_user($conn, $_POST["login"])) > 0) and (strlen(select_id_password($conn, $_POST["passwd"])) > 0)) {
 		
-		$login = $_POST["login"];
-		$password = $_POST["passwd"];
+	$login = $_POST["login"];
+	$password = $_POST["passwd"];
 
-		if (login_password_ok($conn, $login, $password)) {
+	if (login_password_ok($conn, $login, $password)) {
 			
-			$role = select_role($conn, $login);
+		$role = select_role($conn, $login);
 			
-			if ($role == "admin") {
+		if ($role == "admin") {
 				
-				/* session admin */
-				$_SESSION["admin"]=time() ; 
+			/* session admin */
+			$_SESSION["admin"]=time() ; 
 				
-				/* redirection */
-				header("Location: admin/admin.php") ; 
-			}
-			
-			if ($role == "client") {
-				
-				/* session client */
-				$_SESSION["client"]=time() ; 
-				$_SESSION["username"]=$login;
-				
-				/* redirection */
-				header("Location: client.php") ; 
-			}
-			
-		} else {
-			echo "<p class='incorrect'> Nom d'utilisateur ou mot de passe incorrect </p>";
+			/* redirection */
+			header("Location: admin/admin.php") ; 
 		}
-
+			
+		if ($role == "client") {
+				
+			/* session client */
+			$_SESSION["client"]=time() ; 
+			$_SESSION["username"]=$login;
+				
+			/* redirection */
+			header("Location: client.php") ; 
+		}
+			
 	} else {
-		echo "<p class='incorrect'> Veuiller saisir un nom d'utilisateur et un mot de passe conforme </p>";
+		echo "<p class='incorrect'> Nom d'utilisateur ou mot de passe incorrect </p>";
 	}
 
 }
