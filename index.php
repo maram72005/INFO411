@@ -81,7 +81,7 @@ function connexion($conn) {
 			$_SESSION["username"]=$login;
 				
 			/* redirection */
-			header("Location: client.php") ; 
+			header("Location: site.php") ; 
 		}
 			
 	} else {
