@@ -12,13 +12,13 @@ $conn = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);
     	exit();
 	}
 	// Sélection de la base de données
-	mysqli_select_db($CONNEXION, NOM_BD);
+	mysqli_select_db($conn, NOM_BD);
 	if (mysqli_connect_errno()) {
 		echo 'Désolé, accès à la base ' . NOM_BD . ' impossible, '. mysqli_connect_error(), "\n";
     	exit();
 	}
 	// Spécification de l'encodage UTF-8 pour dialoguer avec la BD
-	if (!mysqli_set_charset($CONNEXION, 'UTF8')) {
+	if (!mysqli_set_charset($conn, 'UTF8')) {
     	echo 'Erreur au chargement de l\'encodage UTF-8 : ', mysqli_connect_error(), "\n";
 	}
 
