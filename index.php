@@ -71,7 +71,7 @@ function connexion($conn) {
 			$_SESSION["admin"]=time() ; 
 				
 			/* redirection */
-			header("Location: admin/admin.php") ; 
+			header("Location: admin.php") ; 
 		}
 			
 		if ($role == "client") {
