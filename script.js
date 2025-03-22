@@ -259,7 +259,7 @@ function interraction_avec_panier(div_produit, product) {
             console.log(panier);
             let long = panier.length;
 
-            lien_commande.href += "&long=" + long;
+            lien_commande.href += "&long=" + long + "&user=" + user;
 
             let ind = 0;
 

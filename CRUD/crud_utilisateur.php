@@ -65,4 +65,21 @@ function list_login_utilisateur($conn){
 	return $tab;
 }
 
+
+function id_user_via_username($conn, $username) {
+    /* Renvoie l'id du user grace à son nom */
+    $sql = "SELECT id FROM comptes WHERE login = '$username'";
+    global $debeug ;
+	if($debeug) //echo $sql ; 
+	$res=mysqli_query($conn, $sql) ; 
+	$tab=rs_to_tab($res) ;
+	return $tab[0]["id"] ;
+}
+
+function insert_panier($conn, $id_user, $id_product, $quantite) {
+	$sql="INSERT INTO `panier` (`id_compte`, `id_article`, `quantite`) value( '$id_user', '$id_product', '$quantite' )" ; 
+	$res=mysqli_query($conn, $sql) ; 
+	return $res ; 
+}
+
 ?>

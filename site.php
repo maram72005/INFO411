@@ -11,6 +11,7 @@
 <?php
 
 include 'db/db_connect.php';
+include 'CRUD/crud_utilisateur.php';
 include 'CRUD/crud_insert.php';
 
 session_start();
@@ -28,6 +29,8 @@ if((isset($_GET["action"]) && ($_GET["action"] == "commande"))) {
     // echo "commande";
 
     $long = $_GET["long"];
+    $user = $_GET["user"];
+    $id_user = id_user_via_username($conn, $user);
     $order = [];
 
     for($i=0; $i<$long; $i++) {
@@ -36,6 +39,8 @@ if((isset($_GET["action"]) && ($_GET["action"] == "commande"))) {
 
         // print_r($product_ordered);
         // print_r($quantity_ordered);
+
+        insert_panier($conn, $id_user, $product_ordered, $quantity_ordered);
 
         $order[] = ["id_product" => $product_ordered, "quant_product" => $quantity_ordered];
     }
@@ -49,7 +54,9 @@ if((isset($_GET["action"]) && ($_GET["action"] == "commande"))) {
 } else {
     $products_str = recup_articles($conn);
 
-    echo "var products = ${products_str}";
+    echo "var products = ${products_str};\n";
+
+    echo "var user = '${user}';\n";
 }
 
 ?>
