@@ -65,6 +65,8 @@ function reinitialisation_apres_commande() {
         })
     })
 
+    console.log(products);
+
     products_container.innerHTML = "";
     products_details_container.innerHTML = "";
     creation_liste_products();
@@ -257,9 +259,13 @@ function interraction_avec_panier(div_produit, product) {
         const prix_total = create("p", panier_container, "Montant total : " + montant_total + "€", "montant_total", "");
 
         const bouton_commande = create("button", panier_container, "Commander", "bouton_commande", "");
+        const lien_commande = create("a", bouton_commande, "", "", "");
+        lien_commande.href = "site.php?commande";
 
         bouton_commande.addEventListener("click", _ => {
-            console.log("commande");
+            console.log("commande_test");
+            console.log(lien_commande);
+
             reinitialisation_apres_commande();
         })
     })

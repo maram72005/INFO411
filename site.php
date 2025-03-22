@@ -41,8 +41,7 @@ $products_str=json_encode($products);
 <?php 
 echo "const products = ${products_str}";
 ?> 
-
-console.log(products);
+// console.log(products);
 </script>
 
 <h1> Bienvenue sur Model-Shop ! </h1>
