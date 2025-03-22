@@ -35,10 +35,6 @@
     width: 50px;
 }
 
-.voir_panier {
-    width: 100px;
-}
-
 .detail_product {
     display: none;
 }
@@ -91,10 +87,18 @@
     left: 10px;
 }
 
+.log_out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+}
+
 .voir_panier {
     position: absolute;
     top: 0;
     right: 0;
+    width: 100px;
 }
 
 .marque_echelle_product {

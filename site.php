@@ -24,7 +24,7 @@ echo "Bienvenue " . $user;
 <script> 
 <?php
 
-if(isset($_GET["action"])) {
+if((isset($_GET["action"]) && ($_GET["action"] == "commande"))) {
     // echo "commande";
 
     $long = $_GET["long"];
@@ -86,6 +86,10 @@ if(isset($_GET["action"])) {
     <button id="bouton_filtre"> Afficher les produits correspondants </button>
         
 </div>
+
+<a href="index.php?action=disconnect" class="log_out">
+<img class="log_out" src="Images/logout.png">
+</a>
 
 <img class="voir_panier" src="Images/voir_panier.jpg" >
 
