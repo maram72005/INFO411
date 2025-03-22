@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style_index.css">
   <title>Model-Shop Login</title>
 </head>
-<body>
+<body> 
 
 <h1> Model-shop </h1>
 
