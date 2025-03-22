@@ -68,7 +68,8 @@ function connexion($conn) {
 		if ($role == "admin") {
 				
 			/* session admin */
-			$_SESSION["admin"]=time() ; 
+			$_SESSION["admin"]=time() ;
+			$_SESSION["username"]=$login;
 				
 			/* redirection */
 			header("Location: admin.php") ; 
