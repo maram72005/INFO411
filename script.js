@@ -17,7 +17,7 @@ function create(tag, container, text=null, classe=null, ide=null) {
 
 var panier = [];
 
-/* console.log(products); */
+// console.log(products); 
 
 const products_container = document.querySelector(".products_container");
 
@@ -55,16 +55,6 @@ bouton_filtre.addEventListener("click", _ => {
 
 function reinitialisation_apres_commande() {
 
-    panier.forEach(product_order => {
-        nom_product = product_order.name;
-        quant_order = product_order.quantite;
-        products.forEach(product_in_stock => {
-            if (product_in_stock.name == nom_product) {
-                product_in_stock.stock = product_in_stock.stock - quant_order;
-            }
-        })
-    })
-
     console.log(products);
 
     products_container.innerHTML = "";
@@ -81,6 +71,8 @@ function reinitialisation_apres_commande() {
     })
 
     montant_total = 0;
+
+    products = [];
 }
 
 
@@ -258,13 +250,23 @@ function interraction_avec_panier(div_produit, product) {
 
         const prix_total = create("p", panier_container, "Montant total : " + montant_total + "€", "montant_total", "");
 
-        const bouton_commande = create("button", panier_container, "Commander", "bouton_commande", "");
-        const lien_commande = create("a", bouton_commande, "", "", "");
-        lien_commande.href = "site.php?commande";
+        const lien_commande = create("a", panier_container, "", "", "");
+        lien_commande.href = "site.php?action=commande";
+        const bouton_commande = create("button", lien_commande, "Commander", "bouton_commande", "");
 
         bouton_commande.addEventListener("click", _ => {
-            console.log("commande_test");
-            console.log(lien_commande);
+            console.log("commande");
+            console.log(panier);
+            let long = panier.length;
+
+            lien_commande.href += "&long=" + long;
+
+            let ind = 0;
+
+            panier.forEach(article => {
+                lien_commande.href += "&id_art" + ind + "=" + article.id + "&quant" + ind + "=" + article.quantite;
+                ind++;
+            })
 
             reinitialisation_apres_commande();
         })

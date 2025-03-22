@@ -11,38 +11,51 @@
 <?php
 
 include 'db/db_connect.php';
+include 'CRUD/crud_insert.php';
 
-session_start() ;
+session_start();
 
 $user = $_SESSION["username"];
 
-print_r($user);
-
-function list_products($conn) {
-    $res = mysqli_query($conn, "select * from article") ;
-	$tab=[] ; 
-	while($row=mysqli_fetch_assoc($res)){
-		$tab[]=$row ;	
-	}
-	return $tab;
-}
-
-// print_r(list_products($conn));
-
-//1- Récupère la liste des articles
-$products=list_products($conn) ;
-
-//2- Transforme le tableau php en tableau Js
-$products_str=json_encode($products);
+echo "Bienvenue " . $user;
 
 ?>
 
 <script> 
-<?php 
-echo "const products = ${products_str}";
-?> 
-// console.log(products);
+<?php
+
+if(isset($_GET["action"])) {
+    // echo "commande";
+
+    $long = $_GET["long"];
+    $order = [];
+
+    for($i=0; $i<$long; $i++) {
+        $product_ordered = $_GET["id_art".strval($i)];
+        $quantity_ordered = $_GET["quant".strval($i)];
+
+        // print_r($product_ordered);
+        // print_r($quantity_ordered);
+
+        $order[] = ["id_product" => $product_ordered, "quant_product" => $quantity_ordered];
+    }
+    //print_r($order);
+
+    MAJ_BDD_after_order($conn, $order); // On met à jour la base de données en enlevant les produits commandés
+
+    $products_str = recup_articles($conn); // On récupère la base de données maintenant mise à jour
+    
+    echo "products = ${products_str}";
+} else {
+    $products_str = recup_articles($conn);
+
+    echo "var products = ${products_str}";
+}
+
+?>
+
 </script>
+
 
 <h1> Bienvenue sur Model-Shop ! </h1>
 
