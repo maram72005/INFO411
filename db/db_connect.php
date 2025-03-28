@@ -1,8 +1,8 @@
 <?php
 define ('SERVEUR_BD','localhost');
 define ('LOGIN_BD','root');
-define ('PASS_BD','');
-define ('NOM_BD','info411');
+define ('PASS_BD','root');
+define ('NOM_BD','info411.php');
 
 
 $conn = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);
