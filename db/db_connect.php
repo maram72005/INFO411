@@ -1,5 +1,5 @@
 <?php
-define ('SERVEUR_BD','localhost');
+define ('SERVEUR_BD','c_mariadb:3306');
 define ('LOGIN_BD','root');
 define ('PASS_BD','root');
 define ('NOM_BD','info411.sql');
