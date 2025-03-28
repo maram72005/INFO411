@@ -1,4 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    color: steelblue;
+    font-size: 1.2rem;
+}
+
 .hidden {
     visibility: hidden;
 }
 
+#interface_modif_stock {
+    border: 3px solid orange;
+    background-color: white;
+    width: 60%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    border-radius: 30px;
+}
+
+.croix {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+}
+
+#boite_a_produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#boite_1_produit {
+    border: 3px solid orange;
+    border-radius: 30px;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.outofstock {
+    color: red;
+}
+
+.log_out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

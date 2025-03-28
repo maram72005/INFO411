@@ -34,6 +34,19 @@ function old_stock($conn, $id_product) {
 	return $tab[0]["stock"] ;
 }
 
+function update_stock_admin($conn, $id, $quant) {
+    $old_stock = old_stock($conn, $id); // récup du stock avant la commande
+    //print_r($old_stock);
+    $new_stock = $old_stock + $quant;
+    //print_r($new_stock);
+        
+    $sql = "UPDATE `article` SET `stock`='$new_stock'  WHERE id = $id";
+    global $debeug ;
+    if($debeug) //echo $sql ; 
+	$res=mysqli_query($conn, $sql) ;
+    return $res;
+}
+
 function update_stock($conn, $id, $quant) {
     $old_stock = old_stock($conn, $id); // récup du stock avant la commande
     //print_r($old_stock);
