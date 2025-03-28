@@ -2,7 +2,7 @@
 define ('SERVEUR_BD','localhost');
 define ('LOGIN_BD','root');
 define ('PASS_BD','root');
-define ('NOM_BD','info411.php');
+define ('NOM_BD','info411.sql');
 
 
 $conn = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);
