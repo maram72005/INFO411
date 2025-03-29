@@ -1,0 +1,16 @@
+name: info411
+services:
+    monubuntu:
+        container_name: c_monubuntu
+        image: monubuntu
+    welcome-to-docker:
+        ports:
+            - 3000:3000
+        volumes:
+            - test:/test
+        container_name: c_welcome
+        image: welcome-to-docker
+volumes:
+    test:
+        external: true
+        name: test
