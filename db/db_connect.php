@@ -1,8 +1,8 @@
 <?php
-define ('SERVEUR_BD','c-bdd:3306');
-define ('LOGIN_BD','root');
-define ('PASS_BD','root');
-define ('NOM_BD','info411.sql');
+define ('SERVEUR_BD','mariadb:3306');
+define ('LOGIN_BD','test');
+define ('PASS_BD','test');
+define ('NOM_BD','info411');
 
 
 $conn = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);
