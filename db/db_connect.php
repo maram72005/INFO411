@@ -1,8 +1,8 @@
 <?php
-define ('SERVEUR_BD','mariadb:3306');
-define ('LOGIN_BD','test');
-define ('PASS_BD','test');
-define ('NOM_BD','info411');
+define ('SERVEUR_BD',getenv('SERVEUR_BD'));
+define ('LOGIN_BD',getenv('LOGIN_BD'));
+define ('PASS_BD',getenv('PASS_BD'));
+define ('NOM_BD',getenv('NOM_BD'));
 
 
 $conn = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);

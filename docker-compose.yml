@@ -2,24 +2,33 @@ services:
   mariadb:
     image: mariadb
     environment:
-      - MARIADB_USER=test
-      - MARIADB_PASSWORD=test
-      - MARIADB_DATABASE=info411
-      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_USER=${LOGIN_BD}
+      - MARIADB_PASSWORD=${PASS_BD}
+      - MARIADB_DATABASE=${NOM_BD}
+      - MARIADB_ROOT_PASSWORD=${PASS_ROOT_BD}
     ports:
       - 3306:3306
+    volumes:
+      - ./db_data:/var/lib/mysql
     
   monapache:
     image: avocatmb/monapache
     ports:
       - 80:80
+    volumes:
+      - .:/var/www/html
+    environment:
+      - SERVEUR_BD=${SERVEUR_BD}
+      - LOGIN_BD=${LOGIN_BD}
+      - PASS_BD=${PASS_BD}
+      - NOM_BD=${NOM_BD}
   
   phpmyadmin:
     image: phpmyadmin
     environment:
       - PMA_HOST=mariadb
     ports:
-      - 8080:80
+      - ${PORT_PHPMYADMIN}:80
   
   monubuntu:
     image: avocatmb/monubuntu
