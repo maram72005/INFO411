@@ -4,7 +4,7 @@ services:
     environment:
       - MARIADB_USER=test
       - MARIADB_PASSWORD=test
-      - MARIADB_DATABASE=info411.sql
+      - MARIADB_DATABASE=info411
       - MARIADB_ROOT_PASSWORD=root
     ports:
       - 3306:3306
