@@ -14,7 +14,7 @@ services:
   monapache:
     image: avocatmb/monapache
     ports:
-      - 80:80
+      - 127.0.0.1:8082:80
     volumes:
       - .:/var/www/html
     environment:

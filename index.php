@@ -10,6 +10,8 @@
 
 <h1> Model-shop </h1>
 
+<h2> test du sh </h2>
+
 <p> Bienvenue sur Model-shop, un site sur lequel vous pouvez acheter des modèles réduits à monter </p>
 
 <form method="POST" action="index.php">
